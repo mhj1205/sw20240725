@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var memoTxt = document.getElementById("memoTxt")
+            var demo = document.querySelector('#demo');
+            var resetBtn = document.querySelector('#resetBtn');
+            var clickBtn = document.querySelector('#clickBtn');
+
+            clickBtn.addEventListener('click',function(event){
+                demo.innerHTML += "<br>" + memoTxt.value;
+                memoTxt.value = "";
+                memoTxt.focus();
+            });
+
+            resetBtn.addEventListener('click',function(event){
+                demo.innerHTML = 'JavaScript can change HTML content.';
+            });
+
+            memoTxt.addEventListener('keypress',function(e){
+                if (e.keyCode == 13){
+                    var memoTxtVal = memoTxt.value;
+                    demo.innerHTML = memoTxtVal;
+                    memoTxt.value = "";
+                    memoTxt.focus();
+                }
+            });
+            // 1. 키 이벤트 발생
+            // 2. 엔터키 인지 확인
+            // 3. 엔터키라면 처리
+            
+        }
+    </script>
+</head>
+<body>
+    메모: <input type="text" id="memoTxt">
+
+    <p id="demo">JavaScript can change HTML content.</p>
+
+    <!-- 인터널 방식 적용 -->
+    <button type="button" id="clickBtn" >Click</button>
+    <button type="button" id="resetBtn">Reset</button>
+   
+</body>
+</html>
