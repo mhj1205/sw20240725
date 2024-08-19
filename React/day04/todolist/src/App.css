@@ -1,0 +1,37 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 150px;
+  color: white;
+}
+
+.input-title {
+  background-color: #fd8803;
+  min-height: 50px;
+  color: white;
+}
+
+.list-body {
+  background-color: #ffff00;
+  min-height: calc(100vh - 200px);
+  color: navy;
+}
+
+.list-body > div {
+  min-height: calc(100vh - 200px);
+}
+
+.todoList > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.table div {
+  margin: 0;
+}
